@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- 
+    CV WEB - JANOVER GONZALO SALDAÑA VELA
+    ====================================
+    
+    Descripción: Curriculum Vitae web interactivo para Ingeniero de Software
+    Autor: Janover Gonzalo Saldaña Vela
+    Fecha: Julio 2025
+    
+    Tecnologías utilizadas:
+    - HTML5 semántico con estructura accesible
+    - CSS3 con Grid, Flexbox y animaciones avanzadas
+    - JavaScript ES6+ con clases y módulos
+    - Font Awesome 6.4.0 para iconografía
+    - Google Fonts (Inter) para tipografía profesional
+    
+    Características:
+    - Diseño responsivo mobile-first
+    - Navegación por secciones con scroll suave
+    - Animaciones CSS y JavaScript optimizadas
+    - Funcionalidad de descarga e impresión
+    - Accesibilidad WCAG 2.1 compliant
+    - SEO optimizado con meta tags estructurados
+-->
+<head>
+    <!-- ================================
+         META TAGS Y CONFIGURACIÓN BÁSICA
+         ================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO y descripción del contenido -->
+    <meta name="description" content="CV de Janover Gonzalo Saldaña Vela - Ingeniero de Software especializado en desarrollo web y móvil">
+    <meta name="author" content="Janover Gonzalo Saldaña Vela">
+    <meta name="keywords" content="Ingeniero de Software, Desarrollador Frontend, Backend, Angular, Vue.js, Flutter, ASP.NET">
+    
+    <!-- Título de la página -->
+    <title>Janover Gonzalo Saldaña Vela - Ingeniero de Software</title>
+    
+    <!-- ================================
+         RECURSOS EXTERNOS Y FUENTES
+         ================================ -->
+    <!-- Favicon para identificación en pestañas y marcadores -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+    <!-- Google Fonts - Tipografía Inter para legibilidad profesional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome 6.4.0 - Iconografía profesional -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- ================================
+         HOJAS DE ESTILO DEL PROYECTO
+         ================================ -->
+    <!-- CSS Principal - Estilos base y componentes -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- CSS Responsivo - Adaptaciones para diferentes dispositivos -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- ================================
+         HEADER - INFORMACIÓN DE CONTACTO
+         ================================ -->
+    <!-- Sección superior con datos personales y de contacto -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Información de perfil con imagen y datos básicos -->
+                <div class="profile-info">
+                    <div class="profile-image">
+                        <img src="assets/img/gonzalo-saldana.png" alt="Janover Gonzalo Saldaña Vela" id="profileImage">
+                    </div>
+                    <div class="profile-details">
+                        <h1 class="name">Janover Gonzalo Saldaña Vela</h1>
+                        <h2 class="title">Ingeniero de Software</h2>
+                        <p class="subtitle">Especialista en Desarrollo Web (Backend/Frontend) y Móvil</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Chorrillos, Lima - Perú</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:janover.gonza.sal@gmail.com">janover.gonza.sal@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+51992016075">+51 992 016 075</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        <span>23 años</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================================
+         NAVEGACIÓN PRINCIPAL
+         ================================ -->
+    <!-- Barra de navegación sticky con enlaces a secciones -->
+    <nav class="navigation" id="navigation">
+        <div class="container">
+            <!-- Menú de navegación horizontal con enlaces internos -->
+            <ul class="nav-menu">
+                <li><a href="#perfil" class="nav-link active">Perfil</a></li>
+                <li><a href="#experiencia" class="nav-link">Experiencia</a></li>
+                <li><a href="#educacion" class="nav-link">Educación</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#certificaciones" class="nav-link">Certificaciones</a></li>
+                <li><a href="#adicional" class="nav-link">Adicional</a></li>
+            </ul>
+            <!-- Botón hamburguesa para menú móvil -->
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ================================
+         CONTENIDO PRINCIPAL DEL CV
+         ================================ -->
+    <!-- Contenedor principal con todas las secciones del curriculum -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- ================================
+                 SECCIÓN 1: PERFIL PROFESIONAL
+                 ================================ -->
+            <!-- Presentación personal con descripción y estadísticas destacadas -->
+            <section id="perfil" class="section active">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-user"></i>
+                        Perfil Profesional
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="profile-description">
+                        <p>
+                            Estudiante de 8.º ciclo de <strong>Ingeniería de Software</strong> con sólida formación en desarrollo de aplicaciones web y móviles, especializado en <strong>frontend, backend y diseño UI/UX</strong>. Experiencia con frameworks modernos como <em>Angular, Vue.js y ASP.NET, Flutter</em> y conocimientos en aseguramiento de calidad (QA).
+                        </p>
+                        <p>
+                            Destaco por mi capacidad de <strong>liderazgo, adaptabilidad y trabajo colaborativo</strong> en equipos ágiles. Como integrante de la selección universitaria de Taekwondo, aplico los valores de <em>disciplina, perseverancia y enfoque</em>, cualidades que refuerzan mi compromiso profesional y ético.
+                        </p>
+                    </div>
+                    
+                    <!-- Estadísticas rápidas -->
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">8°</div>
+                            <div class="stat-label">Ciclo Académico</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Años Experiencia</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Tecnologías</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Certificaciones</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Experiencia Laboral -->
+            <section id="experiencia" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-briefcase"></i>
+                        Experiencia Laboral
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="timeline">
+                        
+                        <!-- Experiencia 1 -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="job-header">
+                                    <h3 class="job-title">Desarrollador Frontend</h3>
+                                    <span class="job-type">Freelancer</span>
+                                </div>
+                                <div class="job-details">
+                                    <h4 class="company">Aplicación Móvil Lizzo</h4>
+                                    <div class="job-period">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>Junio 2025 - Actualidad</span>
+                                    </div>
+                                </div>
+                                <div class="job-description">
+                                    <ul>
+                                        <li>Responsable del desarrollo de interfaces móviles en <strong>Flutter</strong>, aplicando <em>Clean Architecture</em></li>
+                                        <li>Colaboración en el diseño <strong>UI/UX</strong> con <em>Figma</em></li>
+                                        <li>Trabajo conjunto con el equipo para integrar funcionalidades clave</li>
+                                        <li>Proyección hacia tareas de <strong>QA</strong> (Quality Assurance)</li>
+                                    </ul>
+                                </div>
+                                <div class="job-technologies">
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">Clean Architecture</span>
+                                    <span class="tech-tag">Figma</span>
+                                    <span class="tech-tag">UI/UX</span>
+                                    <span class="tech-tag">QA</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experiencia 2 -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="job-header">
+                                    <h3 class="job-title">Tutor de Programación y Desarrollo de Software</h3>
+                                    <span class="job-type">Independiente</span>
+                                </div>
+                                <div class="job-details">
+                                    <h4 class="company">Tutorías Personalizadas</h4>
+                                    <div class="job-period">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>Agosto 2023 - Actualidad</span>
+                                    </div>
+                                </div>
+                                <div class="job-description">
+                                    <ul>
+                                        <li>Tutorías personalizadas a estudiantes universitarios en <strong>C++, C#, JavaScript</strong></li>
+                                        <li>Enseñanza de fundamentos de <strong>desarrollo web</strong></li>
+                                        <li>Asesoría en el desarrollo de aplicaciones web <em>full stack</em> con <strong>Angular, Vue.js y ASP.NET</strong></li>
+                                        <li>Promoción de buenas prácticas de codificación, pruebas y diseño de software</li>
+                                    </ul>
+                                </div>
+                                <div class="job-technologies">
+                                    <span class="tech-tag">C++</span>
+                                    <span class="tech-tag">C#</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">Vue.js</span>
+                                    <span class="tech-tag">ASP.NET</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Educación -->
+            <section id="educacion" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Formación Académica
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="education-item">
+                        <div class="education-header">
+                            <h3 class="degree">Ingeniería de Software</h3>
+                            <div class="education-status">
+                                <span class="status-badge">8° Ciclo</span>
+                                <span class="scholarship-badge">
+                                    <i class="fas fa-award"></i>
+                                    Becario Beca 18 (PRONABEC)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="education-details">
+                            <h4 class="institution">
+                                <i class="fas fa-university"></i>
+                                Universidad Peruana de Ciencias Aplicadas (UPC)
+                            </h4>
+                            <p class="education-description">
+                                Formación integral en desarrollo de software con enfoque en metodologías ágiles, 
+                                arquitecturas modernas y tecnologías emergentes. Becario destacado del programa 
+                                nacional PRONABEC.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Habilidades -->
+            <section id="habilidades" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-code"></i>
+                        Habilidades Técnicas y Profesionales
+                    </h2>
+                </div>
+                <div class="section-content">
+                    
+                    <!-- Habilidades Técnicas -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">
+                            <i class="fas fa-laptop-code"></i>
+                            Habilidades Técnicas
+                        </h3>
+                        
+                        <!-- Frontend -->
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Frontend</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">Angular</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Vue.js</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">JavaScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="88"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">TypeScript</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">HTML</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="95"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">CSS</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="92"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Backend -->
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Backend</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">C#</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="88"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">ASP.NET</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Java</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="82"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Spring Boot</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">SQL</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Desarrollo Móvil -->
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Desarrollo Móvil</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">Flutter</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Kotlin (Android)</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="75"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Arquitecturas -->
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Arquitecturas</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">Clean Architecture</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Domain-Driven Design (DDD)</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="78"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testing / QA -->
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Testing / QA</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">JUnit</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="75"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">NUnit</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="73"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Selenium</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="70"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Lighthouse</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="68"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Diseño UI/UX -->
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Diseño UI/UX</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">Figma</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Herramientas -->
+                        <div class="skill-group">
+                            <h4 class="skill-group-title">Herramientas</h4>
+                            <div class="skills-grid">
+                                <div class="skill-item">
+                                    <span class="skill-name">Git</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="90"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">GitHub</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="88"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">JIRA</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="75"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Microsoft Word</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="85"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Microsoft Excel</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="80"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">PowerPoint</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="82"></div>
+                                    </div>
+                                </div>
+                                <div class="skill-item">
+                                    <span class="skill-name">Canva</span>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress" data-width="78"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Habilidades Profesionales -->
+                    <div class="skills-category">
+                        <h3 class="skills-category-title">
+                            <i class="fas fa-users"></i>
+                            Habilidades Profesionales
+                        </h3>
+                        <div class="soft-skills-grid">
+                            <div class="soft-skill-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <h4>Curiosidad Tecnológica</h4>
+                                <p>Iniciativa de mejora continua</p>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-sync-alt"></i>
+                                <h4>Adaptabilidad</h4>
+                                <p>Aprendizaje autónomo</p>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-users-cog"></i>
+                                <h4>Liderazgo</h4>
+                                <p>Trabajo en equipo ágil</p>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-brain"></i>
+                                <h4>Pensamiento Crítico</h4>
+                                <p>Resolución de problemas</p>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-comments"></i>
+                                <h4>Comunicación</h4>
+                                <p>Asertiva y empática</p>
+                            </div>
+                            <div class="soft-skill-item">
+                                <i class="fas fa-ear-listen"></i>
+                                <h4>Escucha Activa</h4>
+                                <p>Comprensión efectiva</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Certificaciones -->
+            <section id="certificaciones" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-certificate"></i>
+                        Cursos y Certificaciones
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="certifications-grid">
+                        
+                        <!-- Certificación 1 -->
+                        <div class="certification-item featured">
+                            <div class="cert-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3 class="cert-title">Inteligencia Artificial y Desarrollo de Software</h3>
+                                <div class="cert-institution">Universidad de los Andes</div>
+                                <div class="cert-date">Agosto 2025</div>
+                                <div class="cert-status">En Progreso</div>
+                            </div>
+                        </div>
+
+                        <!-- Certificación 2 -->
+                        <div class="certification-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-code-branch"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3 class="cert-title">Software Development with a Unified Process</h3>
+                                <div class="cert-institution">UPC Winter School</div>
+                                <div class="cert-date">Julio 2025</div>
+                                <div class="cert-description">
+                                    Curso intensivo en desarrollo de aplicaciones web con Java, JSP, Servlets y Java Beans aplicando PUD.
+                                </div>
+                                <div class="cert-technologies">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">JSP</span>
+                                    <span class="tech-tag">Servlets</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificación 3 -->
+                        <div class="certification-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3 class="cert-title">Desarrollo de Aplicaciones Móviles</h3>
+                                <div class="cert-institution">UPC</div>
+                                <div class="cert-date">Marzo 2025 - Julio 2025</div>
+                                <div class="cert-description">
+                                    Diseño y desarrollo de aplicaciones móviles nativas con Android y Flutter.
+                                </div>
+                                <div class="cert-technologies">
+                                    <span class="tech-tag">Android</span>
+                                    <span class="tech-tag">Flutter</span>
+                                    <span class="tech-tag">APIs</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificación 4 -->
+                        <div class="certification-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3 class="cert-title">Administración de Bases de Datos SQL Server</h3>
+                                <div class="cert-institution">CTIC UNI</div>
+                                <div class="cert-date">Enero 2025</div>
+                                <div class="cert-description">
+                                    Fundamentos de SQL Server: creación de bases de datos, consultas, manejo de datos y vistas.
+                                </div>
+                                <div class="cert-technologies">
+                                    <span class="tech-tag">SQL Server</span>
+                                    <span class="tech-tag">T-SQL</span>
+                                    <span class="tech-tag">Database Design</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Certificación 5 -->
+                        <div class="certification-item">
+                            <div class="cert-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="cert-content">
+                                <h3 class="cert-title">Desarrollo de Aplicaciones Web y Open Source</h3>
+                                <div class="cert-institution">UPC</div>
+                                <div class="cert-date">Agosto 2024 - Diciembre 2024</div>
+                                <div class="cert-description">
+                                    Desarrollo full-stack con arquitecturas DDD, despliegue en la nube y metodologías ágiles.
+                                </div>
+                                <div class="cert-technologies">
+                                    <span class="tech-tag">Vue.js</span>
+                                    <span class="tech-tag">Angular</span>
+                                    <span class="tech-tag">ASP.NET</span>
+                                    <span class="tech-tag">Spring Boot</span>
+                                    <span class="tech-tag">DDD</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Otros Cursos -->
+                    <div class="other-courses">
+                        <h3 class="other-courses-title">
+                            <i class="fas fa-plus-circle"></i>
+                            Otros Cursos Complementarios
+                        </h3>
+                        <div class="other-courses-list">
+                            <span class="course-tag">Dirección Estratégica</span>
+                            <span class="course-tag">Estrategias de Negociación</span>
+                            <span class="course-tag">Team Software Process</span>
+                            <span class="course-tag">Team Software Factories</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Información Adicional -->
+            <section id="adicional" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-star"></i>
+                        Información Adicional
+                    </h2>
+                </div>
+                <div class="section-content">
+                    <div class="additional-info-grid">
+                        
+                        <!-- Deporte -->
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-fist-raised"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 class="info-title">Selección Deportiva de Taekwondo</h3>
+                                <div class="info-institution">Universidad Peruana de Ciencias Aplicadas (UPC)</div>
+                                <div class="info-period">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Febrero 2023 - Actualidad
+                                </div>
+                                <div class="info-description">
+                                    <p>
+                                        Miembro activo de la selección universitaria, aplicando valores de 
+                                        <strong>disciplina, perseverancia y enfoque</strong> que se trasladan 
+                                        al ámbito profesional y fortalecen el compromiso ético.
+                                    </p>
+                                </div>
+                                <div class="info-skills">
+                                    <span class="skill-badge">Disciplina</span>
+                                    <span class="skill-badge">Liderazgo</span>
+                                    <span class="skill-badge">Perseverancia</span>
+                                    <span class="skill-badge">Trabajo en Equipo</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Primeros Auxilios -->
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-first-aid"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3 class="info-title">Capacitación en Primeros Auxilios</h3>
+                                <div class="info-institution">Universidad Peruana de Ciencias Aplicadas (UPC)</div>
+                                <div class="info-period">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    Febrero 2024 - Marzo 2024
+                                </div>
+                                <div class="info-description">
+                                    <p>
+                                        Certificación en técnicas básicas de primeros auxilios y atención de emergencias, 
+                                        demostrando compromiso con la <strong>responsabilidad social</strong> y el 
+                                        <strong>bienestar comunitario</strong>.
+                                    </p>
+                                </div>
+                                <div class="info-skills">
+                                    <span class="skill-badge">Responsabilidad Social</span>
+                                    <span class="skill-badge">Atención de Emergencias</span>
+                                    <span class="skill-badge">Compromiso Comunitario</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 Janover Gonzalo Saldaña Vela. Todos los derechos reservados.</p>
+                    <p>Ingeniero de Software especializado en desarrollo web y móvil</p>
+                </div>
+                <div class="footer-actions">
+                    <button class="btn-download" id="downloadCV">
+                        <i class="fas fa-download"></i>
+                        Descargar CV
+                    </button>
+                    <button class="btn-print" id="printCV">
+                        <i class="fas fa-print"></i>
+                        Imprimir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón volver arriba -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Loading Spinner (opcional para efectos de carga) -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+</body>
+</html>

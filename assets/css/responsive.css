@@ -1,0 +1,727 @@
+/**
+ * ESTILOS RESPONSIVOS DEL CV - JANOVER GONZALO SALDAÑA VELA
+ * =========================================================
+ * 
+ * Descripción: Hoja de estilos responsiva para adaptación a diferentes dispositivos
+ * Autor: Janover Gonzalo Saldaña Vela
+ * Fecha: Julio 2025
+ * 
+ * Breakpoints utilizados:
+ * - Mobile: 320px - 768px
+ * - Tablet: 768px - 1024px  
+ * - Desktop: 1024px+
+ * 
+ * Enfoque: Mobile First con Progressive Enhancement
+ */
+
+/* ===================================
+   BREAKPOINTS Y MEDIA QUERIES
+   =================================== */
+
+/* Tablet y dispositivos medianos (768px y arriba) */
+@media (max-width: 1024px) {
+    
+    /* Ajustes del contenedor */
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    /* Header responsivo */
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+        text-align: center;
+    }
+    
+    .profile-info {
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .contact-info {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* Navegación tablet */
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Timeline adaptativa */
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: 60px;
+        margin-right: 0;
+        text-align: left;
+    }
+    
+    .timeline-marker {
+        left: 30px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before,
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -20px;
+        right: auto;
+        border-left-color: transparent;
+        border-right-color: var(--color-bg-card);
+    }
+    
+    /* Grids responsivos */
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: var(--spacing-md);
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .additional-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajustes de fuentes */
+    .section-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .profile-details .name {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .profile-details .title {
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* Mobile y dispositivos pequeños (768px y abajo) */
+@media (max-width: 768px) {
+    
+    /* Variables específicas para móvil */
+    :root {
+        --spacing-xs: 0.25rem;
+        --spacing-sm: 0.5rem;
+        --spacing-md: 0.75rem;
+        --spacing-lg: 1rem;
+        --spacing-xl: 1.5rem;
+        --spacing-2xl: 2rem;
+        --spacing-3xl: 2.5rem;
+    }
+    
+    /* Contenedor móvil */
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    /* Header móvil */
+    .header {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .header-content {
+        gap: var(--spacing-lg);
+    }
+    
+    .profile-info {
+        gap: var(--spacing-md);
+    }
+    
+    .profile-image {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .profile-details .name {
+        font-size: var(--font-size-xl);
+        line-height: 1.2;
+    }
+    
+    .profile-details .title {
+        font-size: var(--font-size-base);
+    }
+    
+    .profile-details .subtitle {
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Navegación móvil */
+    .navigation .container {
+        position: relative;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-bg-secondary);
+        border: 1px solid var(--color-border);
+        border-top: none;
+        flex-direction: column;
+        gap: 0;
+        transform: translateY(-10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all var(--transition-normal);
+        z-index: var(--z-dropdown);
+        border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+        box-shadow: 0 5px 15px var(--color-shadow);
+    }
+    
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--color-border);
+        border-radius: 0;
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link::before {
+        display: none;
+    }
+    
+    /* Contenido principal móvil */
+    .main-content {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .section {
+        margin-bottom: var(--spacing-2xl);
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .section-title {
+        font-size: var(--font-size-xl);
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .section-title i {
+        font-size: var(--font-size-lg);
+    }
+    
+    /* Perfil móvil */
+    .profile-description {
+        text-align: left;
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .profile-description p {
+        font-size: var(--font-size-base);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .stat-item {
+        padding: var(--spacing-md);
+    }
+    
+    .stat-number {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .stat-label {
+        font-size: var(--font-size-xs);
+    }
+    
+    /* Timeline móvil */
+    .timeline {
+        margin-left: var(--spacing-md);
+    }
+    
+    .timeline::before {
+        left: 0;
+    }
+    
+    .timeline-marker {
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content,
+    .timeline-item:nth-child(even) .timeline-content {
+        margin-left: var(--spacing-lg);
+        margin-right: 0;
+    }
+    
+    .timeline-content {
+        padding: var(--spacing-md);
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before,
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -15px;
+        border-width: 8px;
+    }
+    
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .job-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .company {
+        font-size: var(--font-size-base);
+    }
+    
+    .job-technologies {
+        justify-content: flex-start;
+    }
+    
+    /* Educación móvil */
+    .education-item {
+        padding: var(--spacing-lg);
+    }
+    
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .degree {
+        font-size: var(--font-size-xl);
+    }
+    
+    .education-status {
+        flex-wrap: wrap;
+    }
+    
+    .scholarship-badge {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    
+    /* Habilidades móvil */
+    .skills-category-title {
+        font-size: var(--font-size-lg);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .skill-group-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .skill-item {
+        padding: var(--spacing-md);
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .soft-skill-item {
+        padding: var(--spacing-md);
+    }
+    
+    .soft-skill-item i {
+        font-size: var(--font-size-xl);
+    }
+    
+    .soft-skill-item h4 {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Certificaciones móvil */
+    .certifications-grid {
+        gap: var(--spacing-md);
+    }
+    
+    .certification-item {
+        padding: var(--spacing-md);
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cert-icon {
+        align-self: center;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .cert-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .cert-technologies {
+        justify-content: center;
+    }
+    
+    .other-courses {
+        padding: var(--spacing-md);
+    }
+    
+    .other-courses-title {
+        font-size: var(--font-size-base);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .other-courses-list {
+        justify-content: center;
+    }
+    
+    /* Información adicional móvil */
+    .info-card {
+        padding: var(--spacing-md);
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info-icon {
+        align-self: center;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .info-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .info-period {
+        justify-content: center;
+    }
+    
+    .info-skills {
+        justify-content: center;
+    }
+    
+    /* Footer móvil */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    .footer-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .btn-download,
+    .btn-print {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    /* Botón volver arriba móvil */
+    .scroll-to-top {
+        bottom: var(--spacing-md);
+        right: var(--spacing-md);
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Dispositivos muy pequeños (480px y abajo) */
+@media (max-width: 480px) {
+    
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .header {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .profile-image {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .profile-details .name {
+        font-size: var(--font-size-lg);
+    }
+    
+    .contact-item {
+        padding: var(--spacing-xs);
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-xs);
+    }
+    
+    .contact-item span,
+    .contact-item a {
+        font-size: var(--font-size-xs);
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item {
+        padding: var(--spacing-sm);
+    }
+    
+    .timeline {
+        margin-left: var(--spacing-sm);
+    }
+    
+    .timeline-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .job-title {
+        font-size: var(--font-size-base);
+    }
+    
+    .tech-tag,
+    .skill-badge,
+    .course-tag {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+    
+    .section-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .certification-item,
+    .info-card,
+    .education-item {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Dispositivos de alta densidad (Retina) */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    
+    /* Optimizaciones para pantallas de alta densidad */
+    .profile-image img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    /* Mejor renderizado de bordes finos */
+    .timeline::before {
+        width: 1px;
+    }
+    
+    .skill-bar {
+        height: 6px;
+    }
+}
+
+/* Modo paisaje en dispositivos móviles */
+@media (max-width: 768px) and (orientation: landscape) {
+    
+    .header {
+        padding: var(--spacing-md) 0;
+    }
+    
+    .header-content {
+        gap: var(--spacing-md);
+    }
+    
+    .profile-info {
+        flex-direction: row;
+        gap: var(--spacing-lg);
+    }
+    
+    .profile-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--spacing-sm);
+    }
+    
+    .stat-item {
+        padding: var(--spacing-sm);
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Preferencias de accesibilidad */
+
+/* Reducir movimiento para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .scroll-to-top {
+        animation: none;
+    }
+    
+    .skill-progress::after {
+        animation: none;
+    }
+    
+    .spinner {
+        animation: none;
+    }
+}
+
+/* Modo de alto contraste */
+@media (prefers-contrast: high) {
+    
+    :root {
+        --color-bg-primary: #000000;
+        --color-bg-secondary: #000000;
+        --color-bg-card: #111111;
+        --color-text-primary: #ffffff;
+        --color-text-secondary: #ffffff;
+        --color-accent: #ffff00;
+        --color-border: #ffffff;
+    }
+    
+    .timeline::before,
+    .skill-bar,
+    .nav-link::before {
+        background-color: var(--color-accent);
+    }
+    
+    .timeline-marker {
+        background-color: var(--color-accent);
+        border-color: var(--color-bg-primary);
+    }
+}
+
+/* Modo oscuro del sistema (ya cubierto por defecto) */
+@media (prefers-color-scheme: dark) {
+    /* Nuestro diseño ya es oscuro por defecto */
+}
+
+/* Modo claro del sistema (alternativo) */
+@media (prefers-color-scheme: light) {
+    
+    /* Versión opcional en modo claro */
+    .light-mode {
+        --color-bg-primary: #ffffff;
+        --color-bg-secondary: #f8f9fa;
+        --color-bg-card: #ffffff;
+        --color-text-primary: #212529;
+        --color-text-secondary: #6c757d;
+        --color-accent: #d4a574;
+        --color-border: #dee2e6;
+        --color-shadow: rgba(0, 0, 0, 0.1);
+    }
+}
+
+/* Optimizaciones para impresión en dispositivos móviles */
+@media print and (max-width: 768px) {
+    
+    .header-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .profile-info {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+    
+    .profile-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .soft-skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .certifications-grid,
+    .additional-info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        margin-left: 0;
+    }
+    
+    .timeline::before {
+        display: none;
+    }
+    
+    .timeline-marker {
+        display: none;
+    }
+    
+    .timeline-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+}

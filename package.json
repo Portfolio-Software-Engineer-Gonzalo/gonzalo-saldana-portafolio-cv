@@ -1,0 +1,47 @@
+{
+  "name": "janover-gonzalo-saldana-vela-cv",
+  "version": "1.0.0",
+  "description": "CV Web Interactivo de Janover Gonzalo Saldaña Vela - Ingeniero de Software",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "php -S localhost:8000",
+    "open": "start index.html"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "portfolio",
+    "web-development",
+    "software-engineer",
+    "javascript",
+    "html5",
+    "css3",
+    "responsive-design"
+  ],
+  "author": {
+    "name": "Janover Gonzalo Saldaña Vela",
+    "email": "janover.gonza.sal@gmail.com",
+    "url": "https://github.com/janover-gonzalo-saldana"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janover-gonzalo-saldana/cv-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/janover-gonzalo-saldana/cv-web/issues"
+  },
+  "homepage": "https://janover-gonzalo-saldana.github.io/cv-web",
+  "devDependencies": {},
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
