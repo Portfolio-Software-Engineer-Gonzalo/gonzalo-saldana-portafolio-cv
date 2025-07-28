@@ -269,7 +269,7 @@ class CVAnimations {
         });
 
         // Efecto especial en botones
-        const buttons = document.querySelectorAll('.btn-download, .btn-print');
+        const buttons = document.querySelectorAll('.btn-download');
         buttons.forEach(button => {
             this.addRippleEffect(button);
         });

@@ -1278,8 +1278,7 @@ body {
     gap: var(--spacing-md);
 }
 
-.btn-download,
-.btn-print {
+.btn-download {
     background: linear-gradient(45deg, var(--color-accent), var(--color-accent-hover));
     color: var(--color-bg-primary);
     border: none;
@@ -1294,8 +1293,7 @@ body {
     font-size: var(--font-size-sm);
 }
 
-.btn-download:hover,
-.btn-print:hover {
+.btn-download:hover :hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
 }

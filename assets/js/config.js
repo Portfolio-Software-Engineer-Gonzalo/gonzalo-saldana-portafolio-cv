@@ -403,7 +403,6 @@ window.CVConfig = {
     // Permite activar/desactivar módulos según necesidades
     features: {
         downloadCV: true,       // Habilita botón de descarga del CV en PDF
-        printCV: true,          // Permite impresión optimizada del CV
         darkMode: false,        // Modo oscuro (funcionalidad futura)
         multiLanguage: false,   // Soporte multiidioma (funcionalidad futura)
         contactForm: false,     // Formulario de contacto (funcionalidad futura)

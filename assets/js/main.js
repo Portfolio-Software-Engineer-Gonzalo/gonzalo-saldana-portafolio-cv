@@ -42,7 +42,6 @@ class CVApp {
             navMenu: document.querySelector('.nav-menu'),              // Menú de navegación
             scrollToTop: document.getElementById('scrollToTop'),       // Botón volver arriba
             downloadBtn: document.getElementById('downloadCV'),        // Botón descargar CV
-            printBtn: document.getElementById('printCV'),              // Botón imprimir
             profileImage: document.getElementById('profileImage'),     // Imagen de perfil
             loadingSpinner: document.getElementById('loadingSpinner'), // Spinner de carga
             skillBars: document.querySelectorAll('.skill-progress')    // Barras de progreso habilidades
@@ -115,10 +114,6 @@ class CVApp {
         // Botones de acción
         if (this.elements.downloadBtn) {
             this.elements.downloadBtn.addEventListener('click', () => this.downloadCV());
-        }
-
-        if (this.elements.printBtn) {
-            this.elements.printBtn.addEventListener('click', () => this.printCV());
         }
 
         // Cerrar menú móvil al hacer clic fuera
@@ -632,57 +627,6 @@ class CVApp {
             // En producción, aquí iría la URL real del PDF
             console.log('Descargando CV de Janover Gonzalo Saldaña Vela');
         }, 1000);
-    }
-
-    /**
-     * Imprime el CV
-     */
-    printCV() {
-        // Preparar para impresión
-        this.showNotification('Preparando impresión...', 'info');
-        
-        // Mostrar todas las secciones para impresión
-        this.elements.sections.forEach(section => {
-            section.classList.add('active');
-        });
-        
-        // Ocultar elementos no necesarios para impresión
-        const nonPrintElements = document.querySelectorAll(
-            '.navigation, .scroll-to-top, .footer-actions'
-        );
-        nonPrintElements.forEach(element => {
-            element.style.display = 'none';
-        });
-        
-        // Imprimir
-        setTimeout(() => {
-            window.print();
-            
-            // Restaurar estado después de imprimir
-            this.restoreAfterPrint();
-        }, 500);
-    }
-
-    /**
-     * Restaura el estado después de imprimir
-     */
-    restoreAfterPrint() {
-        // Ocultar todas las secciones excepto la activa
-        this.elements.sections.forEach(section => {
-            if (section.id !== this.state.currentSection) {
-                section.classList.remove('active');
-            }
-        });
-        
-        // Mostrar elementos ocultos
-        const hiddenElements = document.querySelectorAll(
-            '.navigation, .scroll-to-top, .footer-actions'
-        );
-        hiddenElements.forEach(element => {
-            element.style.display = '';
-        });
-        
-        this.showNotification('Impresión completada', 'success');
     }
 
     /**
